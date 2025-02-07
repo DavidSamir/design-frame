@@ -54,11 +54,7 @@ function App() {
           <span></span>
         </section>
         <section className='body wrapper'>
-          <h4 className='pag-head'>
-            <span >44 products</span>
-            <span className='grayed'>12 selected</span>
-          </h4>
-          <Items/>
+          <Items />
         </section>
       </p>
     </>

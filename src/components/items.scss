@@ -47,16 +47,14 @@
         display: grid;
         justify-content: center;
         align-items: center;
-
         >svg {
             opacity: 0;
         }
     }
-
+    
     &.selected {
         .check-indicator {
             background-color: #17D1B6;
-
             >svg {
                 opacity: 1;
             }
