@@ -19,7 +19,7 @@
         object-fit: cover;
     }
 
-    border: 0px solid #17D1B6;
+    border: 0px solid #17d1b6;
 
     &:hover {
         transition: 0.2s;
@@ -34,7 +34,7 @@
             padding: 0 3px;
         }
 
-        border: 3px solid #17D1B650;
+        border: 3px solid #17d1b650;
     }
 
     .check-indicator {
@@ -47,14 +47,16 @@
         display: grid;
         justify-content: center;
         align-items: center;
+
         >svg {
             opacity: 0;
         }
     }
-    
+
     &.selected {
         .check-indicator {
-            background-color: #17D1B6;
+            background-color: #17d1b6;
+
             >svg {
                 opacity: 1;
             }
@@ -74,7 +76,6 @@
     }
 }
 
-
 .items {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -83,7 +84,6 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
-
 
 .items::-webkit-scrollbar {
     width: 2px;
@@ -100,4 +100,46 @@
 .items:hover::-webkit-scrollbar-thumb {
     background-color: #aaa;
     border-radius: 5px;
+}
+
+.app {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.page {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.selected-items-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.selected-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.second-page {
+    background-color: #f9f9f9;
 }
