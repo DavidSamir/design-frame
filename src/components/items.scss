@@ -1,0 +1,105 @@
+.item {
+    min-width: 150px;
+    scroll-snap-align: start;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards ease-in-out;
+    position: relative;
+
+    .item-checkbox {
+        position: absolute;
+        right: 5px;
+        width: 24px;
+        height: 24px;
+    }
+
+    img {
+        width: 100%;
+        height: 224px;
+        background-color: #fff;
+        object-fit: cover;
+    }
+
+    border: 0px solid #17D1B6;
+
+    &:hover {
+        transition: 0.2s;
+
+        img {
+            height: 214px;
+            margin-top: 4px;
+            width: calc(100% - 10px);
+        }
+
+        h4 {
+            padding: 0 3px;
+        }
+
+        border: 3px solid #17D1B650;
+    }
+
+    .check-indicator {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 24px;
+        height: 24px;
+        background-color: #b3b3b3;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        >svg {
+            opacity: 0;
+        }
+    }
+
+    &.selected {
+        .check-indicator {
+            background-color: #17D1B6;
+
+            >svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    max-height: 582px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.items::-webkit-scrollbar {
+    width: 2px;
+}
+
+.items::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.items::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.items:hover::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 5px;
+}

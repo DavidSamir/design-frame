@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Romie';
+  src: url('./assets/Romie-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Romie';
+  src: url('./assets/Romie-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Romie';
+  src: url('./assets/Romie-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Romie';
+  src: url('./assets/Romie-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('./assets/MonumentGrotesk-Medium.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('./assets/MonumentGrotesk-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  // padding: 2rem;
+  text-align: center;
+}
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  font-family: 'Romie', Times, serif;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 26px;
+  letter-spacing: -0.1px;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+h4 {
+  font-family: "MonumentGrotesk", serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: start;
+  text-transform: uppercase;
+
+  >span {
+    display: block;
+  }
+}
+
+.pag-head {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+
+  >span {
+    cursor: pointer;
+  }
+}
+
+.dark {
+  color: #111111;
+}
+
+.grayed {
+  color: #666666;
+
+  &:hover {
+    color: #111111;
+  }
+}

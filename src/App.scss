@@ -1,0 +1,83 @@
+.container {
+  background-color: #f5f5f5;
+  color: #000;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 393px;
+  height: 852px;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 13px;
+}
+
+.mockup-iphone {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 11px;
+  justify-content: center;
+  align-items: center;
+
+  .time {
+    font-family: "Roboto", serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20.29px;
+    letter-spacing: -0.4000000059604645px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+  }
+
+  .camera {
+    width: 125px;
+    height: 37px;
+    left: 134px;
+    gap: 0px;
+    border-radius: 18px;
+    opacity: 0px;
+    background: #000;
+
+  }
+}
+
+.nav-progress {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+  padding: 10px;
+
+  >span {
+    display: block;
+    background-color: #CCCCCC;
+    height: 2px;
+  }
+}
+
+.nav-head {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, #194266 8.42%, #17FDCF 86.12%);
+}
