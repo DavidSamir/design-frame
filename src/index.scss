@@ -98,14 +98,20 @@ h4 {
   }
 }
 
+.pag-head-grid { 
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  * {
+    padding: 0;
+    margin: 0;
+  }
+}
 .pag-head {
   display: flex;
   gap: 16px;
   margin-top: 30px;
 
-  >span {
-    cursor: pointer;
-  }
 }
 
 .dark {
@@ -123,9 +129,19 @@ h4 {
 footer.grayed {
   background-color: #666666;
   color: #fff;
+
   &:hover {
     color: #fff;
     cursor: not-allowed;
 
   }
+}
+
+p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
 }

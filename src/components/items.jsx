@@ -62,17 +62,24 @@ function FirstPage({ items, selectedItems, toggleSelection, onNext }) {
 function SecondPage({ selectedItems }) {
     return (
         <div className="page second-page">
-            <h4 className="pag-head">
+            <h4 className="pag-head-grid">
                 <span>Your product selection</span>
+                <p>EDIT</p>
             </h4>
             {selectedItems.length > 0 ? (
                 <div className="selected-items-list">
                     {selectedItems.map(item => (
                         <div key={item} className="selected-item">
                             <img src={`/imgs/items/${item}.png`} alt={`Item ${item}`} />
-                            <h4>
-                                <span className="grayed">PRODUCT Name HERE</span> £250
-                            </h4>
+                            <div>
+                                <h4>
+                                    <span className="grayed">PRODUCT Name HERE</span> £250
+                                </h4>
+                                <button className='active'>
+                                    Ready!
+                                </button>
+                                <p>EDIT</p>
+                            </div>
                         </div>
                     ))}
                 </div>

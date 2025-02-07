@@ -78,6 +78,12 @@
   }
 }
 
+button.active {
+  background: linear-gradient(82.53deg, #194266 0.99%, #18BBAA 69.32%, #17FDCF 113.03%);
+  border: unset;
+  padding: 5px 8px;
+  line-height: 1;
+}
 .active {
   background: linear-gradient(90deg, #194266 8.42%, #17FDCF 86.12%);
 }
