@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './items.scss';
 
 function FirstPage({ items, selectedItems, toggleSelection, onNext }) {
+    const canProceed = selectedItems.length > 0;
+
     return (
         <div className="page first-page">
             <h4 className="pag-head">
@@ -42,17 +44,27 @@ function FirstPage({ items, selectedItems, toggleSelection, onNext }) {
                     );
                 })}
             </div>
-            <footer className="active" onClick={onNext}>
+            <footer
+                className={canProceed ? "active" : "grayed"}
+                onClick={() => {
+                    if (canProceed) {
+                        onNext();
+                    }
+                }}
+            >
                 NEXT
             </footer>
         </div>
     );
 }
 
-function SecondPage({ onBack, selectedItems }) {
+
+function SecondPage({ selectedItems }) {
     return (
         <div className="page second-page">
-            <h2>Selected Items</h2>
+            <h4 className="pag-head">
+                <span>Your product selection</span>
+            </h4>
             {selectedItems.length > 0 ? (
                 <div className="selected-items-list">
                     {selectedItems.map(item => (
@@ -67,15 +79,13 @@ function SecondPage({ onBack, selectedItems }) {
             ) : (
                 <p>No items selected</p>
             )}
-            <button onClick={onBack}>Back</button>
         </div>
     );
 }
 
-function App() {
+function App({ activePage, onNext, onBack }) {
     const items = Array.from({ length: 10 }, (_, index) => index + 1);
     const [selectedItems, setSelectedItems] = useState([]);
-    const [activePage, setActivePage] = useState(1);
 
     const toggleSelection = (item) => {
         setSelectedItems((prevSelected) =>
@@ -83,14 +93,6 @@ function App() {
                 ? prevSelected.filter((selected) => selected !== item)
                 : [...prevSelected, item]
         );
-    };
-
-    const handleNext = () => {
-        setActivePage(2);
-    };
-
-    const handleBack = () => {
-        setActivePage(1);
     };
 
     return (
@@ -105,9 +107,9 @@ function App() {
                     items={items}
                     selectedItems={selectedItems}
                     toggleSelection={toggleSelection}
-                    onNext={handleNext}
+                    onNext={onNext}
                 />
-                <SecondPage onBack={handleBack} selectedItems={selectedItems} />
+                <SecondPage selectedItems={selectedItems} />
             </div>
         </div>
     );

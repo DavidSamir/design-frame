@@ -80,7 +80,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    max-height: 582px;
+    max-height: 542px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -123,20 +123,23 @@
 
 .selected-items-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 8px;
     margin-bottom: 20px;
 }
 
 .selected-item {
-    border: 1px solid #ccc;
+    display: grid;
+    height: 125px;
     padding: 10px;
-    text-align: center;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    background-color: #fff;
 
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
+        overflow: hidden;
     }
 }
 
